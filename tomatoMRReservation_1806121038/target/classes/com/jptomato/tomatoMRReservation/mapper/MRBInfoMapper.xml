@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  <mapper namespace="com.jptomato.tomatoMRReservation.mapper.MeetingRoomInfoMapper">
+
+  <resultMap id="meetingroomMap" type="com.jptomato.tomatoMRReservation.model.MeetingRoom">
+        <id column="MEETINGROOM_ID" property="meetingRoomId"/>
+        <result column="MEETINGROOM_NAME" property="meetingRoomName"/>
+        <result column="MEETINGROOM_CAPACITY" property="meetingRoomCapacity"/>
+        <result column="MEETINGROOM_DETAIL_INFO" property="meetingRoomDetailInfo"/>
+		<result  column="MEETINGROOM_STATE" property="meetingRoomState" javaType="boolean" />
+
+  </resultMap>
+
+  <select id="getMRBInfo" resultMap="meetingroomMap">
+ select m.*
+from MeetingRoom m
+  </select>
+
+  <update id="available">
+  update meetingroom set MEETINGROOM_STATE = #{param2} where MEETINGROOM_ID = #{param1}
+  </update>
+  </mapper>
