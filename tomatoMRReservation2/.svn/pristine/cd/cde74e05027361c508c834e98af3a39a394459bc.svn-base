@@ -1,0 +1,508 @@
+BODY{
+    width:1250px; 
+    margin:auto;
+}
+
+.footer{
+	BORDER-TOP: #000080 4px ridge;
+    background:#CBE5E2;
+	front-size:0.5em;
+	text-align:center;
+    padding:0.5px;
+    height:300px;
+}
+
+H1
+{
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    BORDER-LEFT: medium none;
+    /*BORDER-BOTTOM: #000080 4px ridge;*/
+}
+
+H1 A:hover
+{
+    COLOR: #000000;
+    TEXT-DECORATION: none
+}
+H1 A:link
+{
+    COLOR: #000000;
+    TEXT-DECORATION: none
+}
+H1 A:visited
+{
+    COLOR: #000000;
+    TEXT-DECORATION: none
+}
+H1 A:active
+{
+    COLOR: #000000;
+    TEXT-DECORATION: none
+}
+
+H2
+{
+    BORDER-RIGHT: medium none;
+    BORDER-TOP: medium none;
+    BORDER-LEFT: medium none;
+    BORDER-BOTTOM: #CBE5E2 4px solid;
+}
+
+H3
+{
+	border-top-style: none;
+	border-bottom: silver 2px dashed;
+	border-right-style: none;
+	border-left-style: none;
+	border-top-color: #9900cc;
+}
+H5
+{
+	border-top-style: none;
+	border-bottom: silver 1px dashed;
+	border-right-style: none;
+	border-left-style: none;
+	border-top-color: #9900cc;
+}
+
+
+
+
+
+
+
+
+.plink li
+{
+	display:inline;
+	marging: 0px;
+}
+
+.plink li a
+{
+	padding:0 15px;
+	background:url(/seisaku/webroot/img/pankuzu.png) right center no-repeat;
+}
+
+.hlink li 
+{
+	display:inline;
+	padding: 10px;
+}
+
+
+
+.bottomLink
+{
+    BORDER-RIGHT: medium none;
+    BORDER-TOP:  medium none;
+    BORDER-LEFT: medium none;
+    BORDER-BOTTOM: medium none;
+    text-align:center;
+    padding:50px;
+    
+}
+
+.searchErr
+{
+	color:red;
+	text-align:center;
+	font-weight: bolder;	
+}
+
+
+a{
+	text-decoration:none;
+}
+
+a:hover{
+	text-decoration:underline;
+}
+
+.description
+{
+    font-size: x-small
+}
+.label
+{
+    FONT-WEIGHT: bold
+}
+
+IMG.display
+{
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 1px solid;
+    BORDER-LEFT: black 1px solid;
+    BORDER-BOTTOM: black 1px solid
+}
+
+.wrapper {
+  padding: 20px 0;
+}
+
+.wrapper h3 {
+  font-size: 2em;
+  text-align: center;
+  font-family: 'Quattrocento Sans', sans-serif;
+}
+.wrapper h4 {
+  font-size: 1.2em;
+  padding: 0;
+  font-weight: bold;
+}
+.wrapper p {
+  margin: 20px auto;
+}
+.wrapper img {
+  margin: 10px auto;
+}
+
+.wrapper div {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 1%;
+  position: relative;
+  height: 500px;
+}
+
+
+
+
+
+
+
+
+
+
+TABLE
+{
+    BORDER-TOP-STYLE: black 1px solid;
+    BORDER-RIGHT-STYLE: black 1px solid;
+    BORDER-LEFT-STYLE: black 1px solid;
+    BORDER-BOTTOM-STYLE: black 1px solid;
+    padding:15px;
+    font-size: 12px;
+    WIDTH: 100%;
+}
+TABLE.result
+{
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 1px solid;
+    BORDER-LEFT: black 1px solid;
+    BORDER-BOTTOM: black 1px solid;
+    BORDER-COLLAPSE: collapse
+}
+
+TABLE.selPayWay th
+{
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 1px solid;
+    BORDER-LEFT: black 1px solid;
+    BORDER-BOTTOM: black 1px solid;
+    TEXT-ALIGN: center;
+    background-color: silver;
+    white-space: nowrap;
+}
+TABLE.selPayWay td
+{
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 1px solid;
+    BORDER-LEFT: black 1px solid;
+    BORDER-BOTTOM: black 1px solid;
+    TEXT-ALIGN: left;
+}
+TABLE.selPayWay
+{
+    BORDER-COLLAPSE: collapse;
+    WIDTH: 80%;
+}
+table.login
+{
+    
+    PADDING-RIGHT: 15px;
+    PADDING-LEFT: 15px;
+    WIDTH: 50%;
+    PADDING-TOP: 15px;
+    TEXT-ALIGN:center ;
+}
+.resultHead
+{
+    font-weight: bolder;
+    background-color: #ffffcc;
+    text-align: right;
+    //border-bottom: black thin solid;
+}
+
+TH.result
+{
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 1px solid;
+    BORDER-LEFT: black 1px solid;
+    BORDER-BOTTOM: black 1px solid;
+    BACKGROUND-COLOR: lightyellow
+}
+.list tr td
+{
+    border-right: black 1px solid;
+    border-top: black 1px solid;
+    border-left: black 1px solid;
+    border-bottom: black 1px solid;
+    TEXT-ALIGN: left;
+    BORDER: black 1px solid;
+}
+
+.list tr th
+{
+    border-right: black 1px solid;
+    border-top: black 1px solid;
+    border-left: black 1px solid;
+    border-bottom: black 1px solid;
+    TEXT-ALIGN: left;
+    BORDER: black 1px solid;
+    
+}
+
+TD
+{
+    TEXT-ALIGN: left;
+
+}
+
+TD.result
+{
+    BORDER-RIGHT: black 1px solid;
+    PADDING-RIGHT: 10px;
+    BORDER-TOP: black 1px solid;
+    PADDING-LEFT: 10px;
+    BORDER-LEFT: black 1px solid;
+    BORDER-BOTTOM: black 1px solid
+}
+
+TD.resultTotal
+{
+    border-right: black 1px solid;
+    padding-right: 10px;
+    border-top: black 1px solid;
+    padding-left: 10px;
+    border-left: black 1px solid;
+    border-bottom: black 1px solid;
+    font-weight: bold;
+    text-align: right;
+}
+
+TD.resultCur
+{
+    BORDER-RIGHT: black 1px solid;
+    PADDING-RIGHT: 10px;
+    BORDER-TOP: black 1px solid;
+    PADDING-LEFT: 10px;
+    BORDER-LEFT: black 1px solid;
+    BORDER-BOTTOM: black 1px solid;
+    TEXT-ALIGN: right;
+}
+
+#table{
+	display:table;
+}
+
+#tablerow{
+	display:tablerow;
+}
+
+tablerow a{
+	padding:5px;
+}
+
+#cell{
+	display:table-cell;
+	height:100px;
+	width:100%;
+	padding:10px;	
+}
+
+#cell2{
+	display:table-cell;
+	height:100px;
+	width:310px;
+	padding:10px;
+	border:1px dotted #888888;
+	font-size:1.5em;
+	text-align:center;
+	background:#FFFAFA;
+		
+}
+
+
+
+
+.num
+{
+    TEXT-ALIGN: right;
+}
+FORM.login
+{
+    BORDER-RIGHT: black 1px solid;
+    PADDING-RIGHT: 15px;
+    BORDER-TOP: black 1px solid;
+    PADDING-LEFT: 15px;
+    PADDING-BOTTOM: 15px;
+    BORDER-LEFT: black 1px solid;
+    WIDTH: 80%;
+    PADDING-TOP: 15px;
+    BORDER-BOTTOM: black 1px solid;
+    BACKGROUND-COLOR: aliceblue;
+    TEXT-ALIGN: center;
+}
+
+.exsample
+{
+	font-weight: normal;
+	text-transform: none;
+	color:darkblue;
+	font-variant: normal;
+        font-size: x-small;
+}
+
+.notice
+{
+	font-weight: normal;
+	text-transform: none;
+	color: red;
+	font-variant: normal;
+        font-size: x-small;
+        
+}
+.errMessage
+{
+    	BORDER-RIGHT: silver 1px solid;
+    	BORDER-TOP: silver 1px solid;
+    	BORDER-LEFT: silver 1px solid;
+    	BORDER-BOTTOM: silver 1px solid;
+    	background-color: aliceblue;
+		margin:10px;     
+}
+
+.errMessage ul
+{
+	color:red;
+  	font-variant: normal;	
+}
+
+
+
+.right-box {
+  left: 50%;
+    BORDER-RIGHT: black 1px solid;
+    BORDER-TOP: black 1px solid;
+    BORDER-LEFT: black 1px solid;
+    BORDER-BOTTOM: black 1px solid;
+}
+
+.left-box, .right-box {
+  width: 25%;
+  //background: #f4b3c2;
+  text-shadow: -1px 1px rgba(255, 255, 255, 0.7);
+}
+
+.left-box {
+  float: left;
+}
+
+.primary, .right-box {
+  float: right;
+}
+
+
+
+
+#container{
+	padding-top:10px;
+    padding-bottom:10px;
+    min-height:700px;
+    width:1240px; 
+    margin:auto;
+}
+
+#main{
+width:84%;
+float:right;
+min-height:650px;
+border-radius:5px;
+margin:10px; 
+}
+
+
+
+#containerErr{
+	padding-top:10px;
+    padding-bottom:10px;
+	height:480px;
+
+}
+
+
+#sidebar{
+
+    BORDER-RIGHT: silver 1px dashed;
+    BORDER-TOP: silver 1px dashed;
+    BORDER-LEFT: silver 1px dashed;
+    BORDER-BOTTOM: silver 1px dashed;
+    width:10%;
+    min-height:560px;
+    border-radius:5px;
+    float:left;
+    padding:10px;
+    background:#ffffcc;
+    margin:10px; 
+}
+
+#container2{
+    padding-top:10px;
+    padding-bottom:10px;
+    background:#FFFAFA url(/seisaku/webroot/img/myBear.png)  no-repeat right bottom;
+    border:1px;
+    text-align:center;
+}
+
+
+.float-3column .primary {
+  width: 50%;
+  left: -25%;
+}
+
+.layer2{
+	position: absolute; 
+	width:603px; 
+	height:348px; 
+	z-index:1; 
+	left:500px; 
+	top:450px; 
+	BACKGROUND:aliceblue; 
+	text-align:center;
+}
+
+.layer1{
+	width:100%; 
+	min-height:700px; 
+	z-index:1; 
+	background: rgba(0%,0%,0%,0.2);
+}
+.errmessage{
+    color: red;
+    font-size: 9px;
+
+}
+.clear{
+    clear: both;
+}
+.button{
+    background:rgb(91,155,213) no-repeat;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    cursor:pointer;
+}

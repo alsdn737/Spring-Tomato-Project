@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper
+	namespace="com.jptomato.tomatoMRReservation.mapper.UserInfoMapper">
+
+	<resultMap id="userMap"
+		type="com.jptomato.tomatoMRReservation.model.User">
+		<id column="USER_ID" property="userId" />
+		<result column="USER_NAME" property="userName" />
+		<result column="USER_PASSWORD" property="userPassWord" />
+		<result column="USER_PHONE" property="userPhone" />
+		<result column="ISENABLE" property="isEnable"
+			javaType="boolean" />
+		<association property="role"
+			javaType="com.jptomato.tomatoMRReservation.model.Role">
+			<id column="role_id" property="roleId" />
+			<result column="role_name" property="roleName" />
+		</association>
+		<association property="department"
+			javaType="com.jptomato.tomatoMRReservation.model.Department">
+			<id column="DEPARTMENT_ID" property="departmentId" />
+			<result column="DEPARTMENT_NAME" property="departmentName" />
+		</association>
+	</resultMap>
+
+	<resultMap id="departmentMap"
+		type="com.jptomato.tomatoMRReservation.model.Department">
+		<id column="DEPARTMENT_ID" property="departmentId" />
+		<result column="DEPARTMENT_NAME" property="departmentName" />
+	</resultMap>
+
+	<resultMap id="roleMap"
+		type="com.jptomato.tomatoMRReservation.model.Role">
+		<id column="role_id" property="roleId" />
+		<result column="role_name" property="roleName" />
+	</resultMap>
+
+
+	<select id="getList" resultMap="userMap">
+
+		select *
+		from user a, role b,
+		department c
+		where a.department_id = c.department_id and a.role_id =
+		b.role_id
+		order by USER_ID asc;
+	</select>
+
+	<insert id="insert">
+		insert into user(user_name, user_password,
+		user_phone, DEPARTMENT_ID,
+		role_id) values
+		(
+		#{userName},
+		#{userPassWord},
+		#{userPhone},
+		#{department.departmentId},
+		#{role.roleId}
+		);
+
+	</insert>
+
+	<select id="getDepartment" resultMap="departmentMap">
+		select * from department
+	</select>
+	<select id="getRole" resultMap="roleMap">
+		select * from role
+
+	</select>
+
+	<select id="getUser" resultMap="userMap"
+		parameterType="java.lang.Integer">
+		select * from user u where u.user_id = #{userId}
+
+	</select>
+
+	<update id="update">
+		update user set
+		USER_NAME = #{userName},
+		USER_PASSWORD = #{userPassWord},
+		USER_PHONE = #{userPhone},
+		DEPARTMENT_ID= #{department.departmentId},
+		role_id = #{role.roleId}
+		where user_Id = #{userId};
+	</update>
+
+	<update id="delete">
+	update user set ISENABLE = #{param2} where user_Id=#{param1};
+	</update>
+</mapper>

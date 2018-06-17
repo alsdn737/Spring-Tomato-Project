@@ -1,0 +1,56 @@
+package com.jptomato.tomatoMRReservation.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.jptomato.tomatoMRReservation.mapper.MeetingRoomInfoMapper;
+import com.jptomato.tomatoMRReservation.model.MeetingRoom;
+
+@Controller
+//@RequestMapping("/meetingRoom")
+public class MeetingRoomController {
+
+	@Autowired
+	private MeetingRoomInfoMapper mriMapper;
+
+	@RequestMapping(value="/mrrList")
+	public String roomList(Model model) {
+		List<MeetingRoom> mrList = mriMapper.getMRBInfo();
+		model.addAttribute("meetingRooms", mrList);
+		return "mrList";
+	}
+
+	@RequestMapping(value="/mrrList",method=RequestMethod.POST)
+	public String roomStop(Model model,MeetingRoom meetingRoom) {
+		System.out.println(meetingRoom.getMeetingRoomId());
+		boolean result = mriMapper.available(meetingRoom.getMeetingRoomId(), !meetingRoom.isMeetingRoomState());
+		System.out.println(result);
+		String a="ant";
+		int z=100;
+		if(z==100){
+			a="100";
+		}
+		boolean result1 = true;
+		int i=0;
+		if(i==0) {
+			result1=false;
+		}
+
+		List<MeetingRoom> mrList = mriMapper.getMRBInfo();
+		model.addAttribute("meetingRooms", mrList);
+		return "mrList";
+	}
+	@RequestMapping(value="/addRoom", method=RequestMethod.POST)
+	public String addRoom(MeetingRoom meetingRoom) {
+		System.out.println(meetingRoom);
+		mriMapper.addRoom(meetingRoom);
+
+		return "redirect:mrrList";
+	}
+
+}

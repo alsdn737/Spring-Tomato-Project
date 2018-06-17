@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ <mapper namespace="com.jptomato.tomatoMRReservation.mapper.UserMapper">
+ <resultMap id="UserMapper" type="com.jptomato.tomatoMRReservation.model.User">
+        <id column="USER_ID" property="userId"/>
+        <result column="USER_NAME" property="userName"/>
+        <result column="USER_PASSWORD" property="userPassWord"/>
+        <result column="USER_PHONE" property="userPhone"/>
+		<result  column="ISENABLE" property="isEnable" javaType="boolean" />
+        <association property="role" javaType="com.jptomato.tomatoMRReservation.model.Role">
+           <id column="role_id" property="roleId"/>
+           <result column="role_name" property="roleName"/>
+        </association>
+        <association property="department" javaType="com.jptomato.tomatoMRReservation.model.Department">
+           <id column="DEPARTMENT_ID" property="departmentId"/>
+            <result column="DEPARTMENT_NAME" property="departmentName"/>
+        </association>
+    </resultMap>
+
+ 	<select id="getUserByUserId" parameterType="java.lang.Integer" resultMap="UserMapper">
+		select * from user u,department d,role r where u.DEPARTMENT_ID = d.DEPARTMENT_ID and u.ROLE_ID = r.ROLE_ID and  user_id = #{value}
+ 	</select>
+ </mapper>

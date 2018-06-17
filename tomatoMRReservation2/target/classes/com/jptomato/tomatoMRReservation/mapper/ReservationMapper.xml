@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+ <mapper namespace="com.jptomato.tomatoMRReservation.mapper.ReservationMapper">
+	<insert id="add" parameterType="com.jptomato.tomatoMRReservation.model.Reservation">
+		insert into reservation(RESERVATION_TITLE,START_TIME,END_TIME,RESERVATION_NOTE,ISENABLE,MEETINGROOM_ID,USER_ID)
+		values(#{reservationTitle},#{startTime},#{endTime},#{reservationNote},true,#{meetingRoom.meetingRoomId},#{user.userId})
+	</insert>
+ <resultMap id="ReservationMapper" type="com.jptomato.tomatoMRReservation.model.Reservation">
+        <id column="RESERVATION_ID" property="reservationId"/>
+        <result column="START_TIME" property="startTime"/>
+        <result column="END_TIME" property="endTime"/>
+        <result column="RESERVATION_NOTE" property="reservationNote"/>
+		<result  column="ISENABLE" property="isEnable" javaType="boolean" />
+		<result column="RESERVATION_TITLE" property="reservationTitle"/>
+        <association property="meetingRoom" javaType="com.jptomato.tomatoMRReservation.model.MeetingRoom">
+           <id column="MEETINGROOM_ID" property="meetingRoomId"/>
+           <result column="MEETINGROOM_NAME" property="meetingRoomName"/>
+        </association>
+        <association property="user" javaType="com.jptomato.tomatoMRReservation.model.User">
+           <id column="USER_ID" property="userId"/>
+            <result column="USER_NAME" property="userName"/>
+        </association>
+    </resultMap>
+
+ 	<select id="getList" resultMap="ReservationMapper">
+		select r.*,u.USER_ID,u.USER_NAME,m.MEETINGROOM_ID,m.MEETINGROOM_NAME from reservation r,user u,meetingroom m
+		where r.USER_ID = u.USER_ID and r.MEETINGROOM_ID = m.MEETINGROOM_ID and r.ISENABLE = true and date_format(START_TIME,'%Y-%m-%d') = #{time}
+		<if test="meetingId!=0">
+		and r.MEETINGROOM_ID=#{meetingId}
+		</if>
+		order by m.MEETINGROOM_ID,START_TIME;
+ 	</select>
+
+ </mapper>
